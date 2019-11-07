@@ -10,13 +10,20 @@
 
 {% for place in places %}
 
-<div>
-    {{ place.name }}
-</div>
+    <div>
+        {{ place.name }}
+
+        <form method="POST" action="{% url 'place_was_visited' %}">
+            {% csrf_token %}
+            <input type="hidden" name="pk" value='{{ place.pk }}'>
+            <button type="submit">Visited!</button>
+        </form>
+
+    </div>
 
 {% empty %}
 
-<p>You have no places in your wishlist</p>
+    <p>You have no places in your wishlist</p>
 
 {% endfor %}
 
