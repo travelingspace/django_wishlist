@@ -6,21 +6,21 @@
 
     <body>
 
-        <h1>Where do you want to go?</h1>
+    <h1>Where do you want to go?</h1>
 
-            {$ block content $}
-            {$ endblock $}
+        {% block content %}
+        {% endblock %}
 
-        <hr>
+    <hr>
 
-        <div>
-            <p>A travel wishlist site built with Django</p>
+    <div>
+        <p>A travel wishlist site built with Django</p>
 
 
-            <a href="{% url 'place_list' %}">Your wishlist</a>
-            <a href="{% url 'places_visited' %}">Places visited</a>
+        <a href="{% url 'place_list' %}">Your wishlist</a>
+        <a href="{% url 'places_visited' %}">Places visited</a>
 
-        </div>
+    </div>
 
     </body>
 </html>
